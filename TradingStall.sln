@@ -9,9 +9,9 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Services", "Services", "{BA
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Warehouse", "Warehouse", "{A1EF5E2A-ABC0-4EE0-BEA8-4A437BDB584B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TradingStall.Warehouse.Domain", "src\Warehouse\TradingStall.Warehouse.Domain\TradingStall.Warehouse.Domain.csproj", "{55740D7F-BB59-4895-BFFD-084718B3912E}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TradingStall.Warehouse.Domain", "src\Services\Warehouse\TradingStall.Warehouse.Domain\TradingStall.Warehouse.Domain.csproj", "{55740D7F-BB59-4895-BFFD-084718B3912E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TradingStall.Warehouse.Application", "src\Warehouse\TradingStall.Warehouse.Application\TradingStall.Warehouse.Application.csproj", "{A6F0E89B-7579-414D-A0D3-88F92CA15BA2}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TradingStall.Warehouse.Application", "src\Services\Warehouse\TradingStall.Warehouse.Application\TradingStall.Warehouse.Application.csproj", "{A6F0E89B-7579-414D-A0D3-88F92CA15BA2}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

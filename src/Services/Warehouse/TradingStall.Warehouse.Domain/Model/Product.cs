@@ -1,8 +1,11 @@
+using TradingStall.Warehouse.Domain.Contracts;
+
 namespace TradingStall.Warehouse.Domain.Model;
 
 public class Product : IProduct
 {
     public long Id { get; set; }
+    public long SellerId { get; set; }
     public string Name { get; set; }
     public long BrandId { get; set; }
     public Brand Brand { get; set; }

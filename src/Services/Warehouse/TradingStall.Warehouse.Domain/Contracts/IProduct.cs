@@ -1,4 +1,4 @@
-namespace TradingStall.Warehouse.Domain;
+namespace TradingStall.Warehouse.Domain.Contracts;
 
 public interface IProduct
 {
