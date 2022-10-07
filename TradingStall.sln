@@ -7,15 +7,15 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{86592A04-53D
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Services", "Services", "{BAF464E2-B857-4526-88DF-660DEDCBA4D7}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Warehouse", "Warehouse", "{A1EF5E2A-ABC0-4EE0-BEA8-4A437BDB584B}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Catalog", "Catalog", "{A1EF5E2A-ABC0-4EE0-BEA8-4A437BDB584B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TradingStall.Warehouse.Domain", "src\Services\Warehouse\TradingStall.Warehouse.Domain\TradingStall.Warehouse.Domain.csproj", "{55740D7F-BB59-4895-BFFD-084718B3912E}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TradingStall.Catalog.Domain", "src\Services\Catalog\TradingStall.Catalog.Domain\TradingStall.Catalog.Domain.csproj", "{55740D7F-BB59-4895-BFFD-084718B3912E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TradingStall.Warehouse.Application", "src\Services\Warehouse\TradingStall.Warehouse.Application\TradingStall.Warehouse.Application.csproj", "{A6F0E89B-7579-414D-A0D3-88F92CA15BA2}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TradingStall.Catalog.Application", "src\Services\Catalog\TradingStall.Catalog.Application\TradingStall.Catalog.Application.csproj", "{A6F0E89B-7579-414D-A0D3-88F92CA15BA2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TradingStall.Warehouse.Infrastructure", "src\Services\Warehouse\TradingStall.Warehouse.Infrastructure\TradingStall.Warehouse.Infrastructure.csproj", "{CEB5BB97-EB6D-46EA-B863-A0E6530A5DA0}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TradingStall.Catalog.Infrastructure", "src\Services\Catalog\TradingStall.Catalog.Infrastructure\TradingStall.Catalog.Infrastructure.csproj", "{CEB5BB97-EB6D-46EA-B863-A0E6530A5DA0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TradingStall.Warehouse.API", "src\Services\Warehouse\TradingStall.Warehouse.API\TradingStall.Warehouse.API.csproj", "{6A2489FF-8428-48FB-89A7-CA6DFDC8BEB6}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TradingStall.Catalog.API", "src\Services\Catalog\TradingStall.Catalog.API\TradingStall.Catalog.API.csproj", "{6A2489FF-8428-48FB-89A7-CA6DFDC8BEB6}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
