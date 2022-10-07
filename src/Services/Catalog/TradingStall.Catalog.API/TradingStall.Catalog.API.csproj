@@ -1,0 +1,22 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+    <PropertyGroup>
+        <TargetFramework>net6.0</TargetFramework>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <PackageReference Include="Swashbuckle.AspNetCore" Version="5.6.3" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Reference Include="MediatR">
+        <HintPath>..\..\..\..\..\..\..\..\home\styurin\.nuget\packages\mediatr\11.0.0\lib\netstandard2.1\MediatR.dll</HintPath>
+      </Reference>
+    </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\TradingStall.Catalog.Application\TradingStall.Catalog.Application.csproj" />
+      <ProjectReference Include="..\TradingStall.Catalog.Infrastructure\TradingStall.Catalog.Infrastructure.csproj" />
+    </ItemGroup>
+
+</Project>
