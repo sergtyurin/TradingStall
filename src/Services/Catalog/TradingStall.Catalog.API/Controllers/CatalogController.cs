@@ -7,6 +7,8 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using TradingStall.Catalog.Application.Brands.Commands;
 using TradingStall.Catalog.Application.Brands.Queries;
+using TradingStall.Catalog.Application.Categories.Commands;
+using TradingStall.Catalog.Application.Categories.Queries;
 
 namespace TradingStall.Catalog.API.Controllers;
 
@@ -32,7 +34,7 @@ public class CatalogController : ControllerBase
     {
         var brandId = await _mediator.Send(createBrandCommand);
         
-        return CreatedAtAction("ItemById", new{ id = brandId }, null);
+        return CreatedAtAction("BrandById", new{ id = brandId }, null);
     }
 
     // GET api/v1/[controller]/catalogbrands/{id}
@@ -41,7 +43,7 @@ public class CatalogController : ControllerBase
     [ProducesResponseType((int)HttpStatusCode.NotFound)]
     [ProducesResponseType((int)HttpStatusCode.BadRequest)]
     [ProducesResponseType(typeof(BrandDetailsViewModel), (int)HttpStatusCode.OK)]
-    public async Task<ActionResult<BrandDetailsViewModel>> ItemByIdAsync(long id)
+    public async Task<ActionResult<BrandDetailsViewModel>> BrandByIdAsync(long id)
     {
         if (id <= 0)
             return BadRequest();
@@ -64,6 +66,49 @@ public class CatalogController : ControllerBase
     public IAsyncEnumerable<BrandViewModel> CatalogBrandsAsync()
     {
         return _mediator.CreateStream(new GetBrandListQuery());
+    }
+    
+    
+    //POST api/v1/[controller]/catalogcategory
+    [Route("catalogcategory")]
+    [HttpPost]
+    [ProducesResponseType((int)HttpStatusCode.Created)]
+    public async Task<ActionResult> CreateCategoryAsync([FromBody] CreateCategoryCommand createCategoryCommand)
+    {
+        var brandId = await _mediator.Send(createCategoryCommand);
+        
+        return CreatedAtAction("CategoryById", new{ id = brandId }, null);
+    }
+
+    // GET api/v1/[controller]/catalogcategory/{id}
+    [HttpGet]
+    [Route("catalogcategory/{id:long}")]
+    [ProducesResponseType((int)HttpStatusCode.NotFound)]
+    [ProducesResponseType((int)HttpStatusCode.BadRequest)]
+    [ProducesResponseType(typeof(CategoryDetailsViewModel), (int)HttpStatusCode.OK)]
+    public async Task<ActionResult<CategoryDetailsViewModel>> CategoryByIdAsync(long id)
+    {
+        if (id <= 0)
+            return BadRequest();
+        
+        var categoryVM = await _mediator.Send(new GetCategoryByIdQuery
+        {
+            Id = id,
+        });
+
+        if (categoryVM is not null)
+            return categoryVM;
+
+        return NotFound();
+    }
+    
+    // GET api/v1/[controller]/catalogcategory
+    [HttpGet]
+    [Route("catalogcategory")]
+    [ProducesResponseType(typeof(IAsyncEnumerable<CategoryViewModel>), (int)HttpStatusCode.OK)]
+    public IAsyncEnumerable<CategoryViewModel> CatalogCategoriesAsync()
+    {
+        return _mediator.CreateStream(new GetCategoryListQuery());
     }
 }
 
