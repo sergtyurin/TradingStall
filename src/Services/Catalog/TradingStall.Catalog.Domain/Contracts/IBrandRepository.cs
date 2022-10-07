@@ -6,4 +6,5 @@ public interface IBrandRepository : IRepository<Brand>
 {
     Task<Brand> AddAsync(Brand brand, CancellationToken cancellationToken = default(CancellationToken));
     Task<Brand?> GetByIdAsync(long brandId, CancellationToken cancellationToken = default(CancellationToken));
+    IAsyncEnumerable<Brand> GetAllAsync(CancellationToken cancellationToken = default(CancellationToken));
 }
