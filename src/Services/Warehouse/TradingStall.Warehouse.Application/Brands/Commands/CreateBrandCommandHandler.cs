@@ -20,8 +20,9 @@ public class CreateBrandCommandHandler : IRequestHandler<CreateBrandCommand, lon
             Name = request.Name,
         };
 
-        _brandRepository.Add(brand);
-        
-        return await _brandRepository.UnitOfWork.SaveChangesAsync(cancellationToken);
+        await _brandRepository.AddAsync(brand, cancellationToken);
+        await _brandRepository.SaveChangesAsync(cancellationToken);
+
+        return brand.Id;
     }
 }

@@ -2,5 +2,5 @@ namespace TradingStall.Warehouse.Domain.Contracts;
 
 public interface IRepository<T>
 {
-    IUnitOfWork UnitOfWork { get; }
+    Task<int> SaveChangesAsync(CancellationToken cancellationToken = default(CancellationToken));
 }
