@@ -4,7 +4,7 @@ namespace TradingStall.Catalog.Domain.Contracts;
 
 public interface ICategoryRepository : IRepository<Category>
 {
-    Category Add(Category category);
-    void Update(Category category);
-    Task<Category> GetAsync(int categoryId);
+    Task<Category> AddAsync(Category сategory, CancellationToken cancellationToken = default(CancellationToken));
+    Task<Category?> GetByIdAsync(long сategoryId, CancellationToken cancellationToken = default(CancellationToken));
+    IAsyncEnumerable<Category> GetAllAsync(CancellationToken cancellationToken = default(CancellationToken));
 }
