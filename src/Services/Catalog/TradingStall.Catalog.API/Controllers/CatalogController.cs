@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using System.Net;
 using System.Threading.Tasks;
 using MediatR;
@@ -39,8 +40,8 @@ public class CatalogController : ControllerBase
     [Route("catalogbrands/{id:long}")]
     [ProducesResponseType((int)HttpStatusCode.NotFound)]
     [ProducesResponseType((int)HttpStatusCode.BadRequest)]
-    [ProducesResponseType(typeof(BrandViewModel), (int)HttpStatusCode.OK)]
-    public async Task<ActionResult<BrandViewModel>> ItemByIdAsync(long id)
+    [ProducesResponseType(typeof(BrandDetailsViewModel), (int)HttpStatusCode.OK)]
+    public async Task<ActionResult<BrandDetailsViewModel>> ItemByIdAsync(long id)
     {
         if (id <= 0)
             return BadRequest();
@@ -56,5 +57,13 @@ public class CatalogController : ControllerBase
         return NotFound();
     }
     
+    // GET api/v1/[controller]/catalogbrands
+    [HttpGet]
+    [Route("catalogbrands")]
+    [ProducesResponseType(typeof(IAsyncEnumerable<BrandViewModel>), (int)HttpStatusCode.OK)]
+    public IAsyncEnumerable<BrandViewModel> CatalogBrandsAsync()
+    {
+        return _mediator.CreateStream(new GetBrandListQuery());
+    }
 }
 
