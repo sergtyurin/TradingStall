@@ -2,7 +2,7 @@ using TradingStall.Catalog.Domain.Contracts;
 
 namespace TradingStall.Catalog.Domain.Model;
 
-public class Product : IProduct
+public class Product
 {
     public long Id { get; set; }
     public long SellerId { get; set; }
