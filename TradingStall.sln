@@ -17,6 +17,16 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TradingStall.Catalog.Infras
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TradingStall.Catalog.API", "src\Services\Catalog\TradingStall.Catalog.API\TradingStall.Catalog.API.csproj", "{6A2489FF-8428-48FB-89A7-CA6DFDC8BEB6}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Orders", "Orders", "{276CEB89-46C2-425E-AB98-77C4FF51A266}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TradingStall.Orders.Domain", "src\Services\Orders\TradingStall.Orders.Domain\TradingStall.Orders.Domain.csproj", "{0DEE06F0-22D5-4A30-A8E4-911ABEE02D5C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TradingStall.Orders.Application", "src\Services\Orders\TradingStall.Orders.Application\TradingStall.Orders.Application.csproj", "{A7F98C87-9B4D-4A5B-9B54-439929031889}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TradingStall.Orders.Infrastructure", "src\Services\Orders\TradingStall.Orders.Infrastructure\TradingStall.Orders.Infrastructure.csproj", "{E0F5D24A-CB65-43AE-AF77-1B12011F5BD6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TradingStall.Orders.API", "src\Services\Orders\TradingStall.Orders.API\TradingStall.Orders.API.csproj", "{6BB20C8C-190F-4D04-8ACA-F06341CB8DCB}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -32,6 +42,11 @@ Global
 		{A6F0E89B-7579-414D-A0D3-88F92CA15BA2} = {A1EF5E2A-ABC0-4EE0-BEA8-4A437BDB584B}
 		{CEB5BB97-EB6D-46EA-B863-A0E6530A5DA0} = {A1EF5E2A-ABC0-4EE0-BEA8-4A437BDB584B}
 		{6A2489FF-8428-48FB-89A7-CA6DFDC8BEB6} = {A1EF5E2A-ABC0-4EE0-BEA8-4A437BDB584B}
+		{276CEB89-46C2-425E-AB98-77C4FF51A266} = {BAF464E2-B857-4526-88DF-660DEDCBA4D7}
+		{0DEE06F0-22D5-4A30-A8E4-911ABEE02D5C} = {276CEB89-46C2-425E-AB98-77C4FF51A266}
+		{A7F98C87-9B4D-4A5B-9B54-439929031889} = {276CEB89-46C2-425E-AB98-77C4FF51A266}
+		{E0F5D24A-CB65-43AE-AF77-1B12011F5BD6} = {276CEB89-46C2-425E-AB98-77C4FF51A266}
+		{6BB20C8C-190F-4D04-8ACA-F06341CB8DCB} = {276CEB89-46C2-425E-AB98-77C4FF51A266}
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{55740D7F-BB59-4895-BFFD-084718B3912E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
@@ -50,5 +65,21 @@ Global
 		{6A2489FF-8428-48FB-89A7-CA6DFDC8BEB6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6A2489FF-8428-48FB-89A7-CA6DFDC8BEB6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6A2489FF-8428-48FB-89A7-CA6DFDC8BEB6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0DEE06F0-22D5-4A30-A8E4-911ABEE02D5C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0DEE06F0-22D5-4A30-A8E4-911ABEE02D5C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0DEE06F0-22D5-4A30-A8E4-911ABEE02D5C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0DEE06F0-22D5-4A30-A8E4-911ABEE02D5C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A7F98C87-9B4D-4A5B-9B54-439929031889}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A7F98C87-9B4D-4A5B-9B54-439929031889}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A7F98C87-9B4D-4A5B-9B54-439929031889}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A7F98C87-9B4D-4A5B-9B54-439929031889}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E0F5D24A-CB65-43AE-AF77-1B12011F5BD6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E0F5D24A-CB65-43AE-AF77-1B12011F5BD6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E0F5D24A-CB65-43AE-AF77-1B12011F5BD6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E0F5D24A-CB65-43AE-AF77-1B12011F5BD6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6BB20C8C-190F-4D04-8ACA-F06341CB8DCB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6BB20C8C-190F-4D04-8ACA-F06341CB8DCB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6BB20C8C-190F-4D04-8ACA-F06341CB8DCB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6BB20C8C-190F-4D04-8ACA-F06341CB8DCB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
