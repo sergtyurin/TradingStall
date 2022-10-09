@@ -1,15 +1,18 @@
 <Project Sdk="Microsoft.NET.Sdk.Web">
 
     <PropertyGroup>
-        <TargetFramework>net5.0</TargetFramework>
+        <TargetFramework>net6.0</TargetFramework>
     </PropertyGroup>
 
     <ItemGroup>
+        <PackageReference Include="MediatR" Version="11.0.0" />
         <PackageReference Include="Swashbuckle.AspNetCore" Version="5.6.3" />
     </ItemGroup>
 
     <ItemGroup>
-      <Folder Include="Controllers" />
+      <ProjectReference Include="..\TradingStall.Orders.Application\TradingStall.Orders.Application.csproj" />
+      <ProjectReference Include="..\TradingStall.Orders.Infrastructure\TradingStall.Orders.Infrastructure.csproj" />
+      <ProjectReference Include="..\TradingStall.Orders.MessageBroker\TradingStall.Orders.MessageBroker.csproj" />
     </ItemGroup>
 
 </Project>

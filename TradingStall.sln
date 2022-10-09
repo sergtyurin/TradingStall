@@ -27,6 +27,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TradingStall.Orders.Infrast
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TradingStall.Orders.API", "src\Services\Orders\TradingStall.Orders.API\TradingStall.Orders.API.csproj", "{6BB20C8C-190F-4D04-8ACA-F06341CB8DCB}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TradingStall.Orders.MessageBroker", "src\Services\Orders\TradingStall.Orders.MessageBroker\TradingStall.Orders.MessageBroker.csproj", "{0853A790-96FD-4C71-838B-C8992CD79F0D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -47,6 +49,7 @@ Global
 		{A7F98C87-9B4D-4A5B-9B54-439929031889} = {276CEB89-46C2-425E-AB98-77C4FF51A266}
 		{E0F5D24A-CB65-43AE-AF77-1B12011F5BD6} = {276CEB89-46C2-425E-AB98-77C4FF51A266}
 		{6BB20C8C-190F-4D04-8ACA-F06341CB8DCB} = {276CEB89-46C2-425E-AB98-77C4FF51A266}
+		{0853A790-96FD-4C71-838B-C8992CD79F0D} = {276CEB89-46C2-425E-AB98-77C4FF51A266}
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{55740D7F-BB59-4895-BFFD-084718B3912E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
@@ -81,5 +84,9 @@ Global
 		{6BB20C8C-190F-4D04-8ACA-F06341CB8DCB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6BB20C8C-190F-4D04-8ACA-F06341CB8DCB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6BB20C8C-190F-4D04-8ACA-F06341CB8DCB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0853A790-96FD-4C71-838B-C8992CD79F0D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0853A790-96FD-4C71-838B-C8992CD79F0D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0853A790-96FD-4C71-838B-C8992CD79F0D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0853A790-96FD-4C71-838B-C8992CD79F0D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

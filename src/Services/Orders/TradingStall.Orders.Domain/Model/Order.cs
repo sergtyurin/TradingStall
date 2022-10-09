@@ -12,34 +12,16 @@ public class Order
     public IReadOnlyCollection<OrderItem> OrderItems => _orderItems;
     public DateTime OrderDate { get; init; }
     public decimal Total() => _orderItems.Sum(e => e.Quantity * e.UnitPrice);
-    private bool _isDraft;
-    
-    public static Order NewDraft()
-    {
-        var order = new Order
-        {
-            _isDraft = true,
-        };
-        
-        return order;
-    }
 
-    protected Order()
-    {
-        _orderItems = new List<OrderItem>();
-        _isDraft = false;
-    }
-    
-    public Order(long buyerId) : this()
+    public Order(long buyerId)
     {
         BuyerId = buyerId;
-        OrderStatusId = OrderStatus.Submitted.Id;
+        OrderStatusId = OrderStatus.Created.Id;
         OrderDate = DateTime.UtcNow;
-        
-        //TODO: Send notification of order creation
+        _orderItems = new List<OrderItem>();
     }
     
-    public void AddOrderItem(int productId, string productName, decimal unitPrice, int units = 1)
+    public void AddOrderItem(long productId, string productName, decimal unitPrice, int units = 1)
     {
         var existingOrderItem = _orderItems.SingleOrDefault(o => o.ProductId == productId);
 
@@ -56,7 +38,7 @@ public class Order
     
     public void SetAwaitingValidationStatus()
     {
-        if (OrderStatusId == OrderStatus.Submitted.Id)
+        if (OrderStatusId == OrderStatus.Created.Id)
         {
             //TODO: Send notification of awaiting validation status
             OrderStatusId = OrderStatus.AwaitingValidation.Id;

@@ -6,11 +6,11 @@ public class OrderItem
     public long ProductId { get; init; }
     public string ProductName { get; init; }
     public decimal UnitPrice { get; init; }
-    public long Quantity { get; private set; }
+    public int Quantity { get; private set; }
     
-    public OrderItem(int productId, string productName, decimal unitPrice, int units = 1)
+    public OrderItem(long productId, string productName, decimal unitPrice, int quantity = 1)
     {
-        if (units <= 0)
+        if (quantity <= 0)
         {
             throw new ArgumentException("Units must be greater than zero");
         }
@@ -19,7 +19,7 @@ public class OrderItem
 
         ProductName = productName;
         UnitPrice = unitPrice;
-        Quantity = units;
+        Quantity = quantity;
     }
     
     public void AddUnits(int units)

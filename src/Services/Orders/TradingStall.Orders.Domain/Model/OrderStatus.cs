@@ -2,10 +2,10 @@ namespace TradingStall.Orders.Domain.Model;
 
 public class OrderStatus
 {
-    public int Id { get; private set; }
+    public long Id { get; private set; }
     public string Name { get; private set; }
     
-    public static OrderStatus Submitted = new OrderStatus(1, nameof(Submitted).ToLowerInvariant());
+    public static OrderStatus Created = new OrderStatus(1, nameof(Created).ToLowerInvariant());
     public static OrderStatus AwaitingValidation = new OrderStatus(2, nameof(AwaitingValidation).ToLowerInvariant());
     public static OrderStatus StockConfirmed = new OrderStatus(3, nameof(StockConfirmed).ToLowerInvariant());
     public static OrderStatus Shipped = new OrderStatus(4, nameof(Shipped).ToLowerInvariant());
@@ -15,5 +15,8 @@ public class OrderStatus
     public static OrderStatus DeliveryFailed = new OrderStatus(8, nameof(DeliveryFailed).ToLowerInvariant());
 
 
-    public OrderStatus(int id, string name) => (Id, Name) = (id, Name);
+    public OrderStatus(long id, string name) => (Id, Name) = (id, name);
+    
+    public static IEnumerable<OrderStatus> List() =>
+        new[] { Created, AwaitingValidation, StockConfirmed, Shipped, Delivered, ReceiptConfirmed, Cancelled, DeliveryFailed };
 }
