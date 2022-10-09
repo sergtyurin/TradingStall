@@ -1,16 +1,12 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.HttpsPolicy;
-using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
+using TradingStall.Orders.Application;
+using TradingStall.Orders.Infrastructure;
+using TradingStall.Orders.MessageBroker;
 
 namespace TradingStall.Orders.API
 {
@@ -26,6 +22,9 @@ namespace TradingStall.Orders.API
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddInfrastructure(Configuration);
+            services.AddApplication();
+            services.AddMessageBroker();
             services.AddControllers();
             services.AddSwaggerGen(c =>
             {
@@ -38,12 +37,22 @@ namespace TradingStall.Orders.API
         {
             if (env.IsDevelopment())
             {
+                using (var scope = app.ApplicationServices.GetService<IServiceScopeFactory>()?.CreateScope())
+                {
+                    if (scope != null)
+                    {
+                        var services = scope.ServiceProvider;
+                        var serviceProvider = services.GetRequiredService<OrderContext>();
+                        DbInitializer.Initialize(serviceProvider);
+                    }
+                }
+                
                 app.UseDeveloperExceptionPage();
                 app.UseSwagger();
                 app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "TradingStall.Orders.API v1"));
             }
 
-            app.UseHttpsRedirection();
+            //app.UseHttpsRedirection();
 
             app.UseRouting();
 
